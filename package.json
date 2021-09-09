@@ -4,8 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf dist",
+    "build": "mkdirp ./dist && browserify ./scripts/app.js > ./dist/bundle.js",
+    "watch": "watchify ./scripts/app.js -o ./dist/bundle.js -d -v",
+    "start": "npm run clean && npm run build && live-server & npm run watch"
   },
   "author": "Tuan Ngo",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.4"
+  },
+  "devDependencies": {
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2",
+    "watchify": "^4.0.0"
+  }
 }
