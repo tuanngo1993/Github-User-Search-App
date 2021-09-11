@@ -1,103 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link rel="stylesheet" href="/app.css">
-  <link href="/tailwind.css" rel="stylesheet">
-  
-  <title>Tuan Ngo | GitHub user search app</title>
-</head>
-<body class="font-mono text-gray-400 bg-blue-50">
-  <div id="user-search-app" class="flex flex-col my-8 mx-4 w-100% max-w-2xl gap-8 sm:mx-auto sm:my-24">
-    <div class="flex justify-between items-center">
-      <div class="font-bold text-black text-2xl">devfinder</div>
-      <div class="flex gap-2 text-sm">
-        <div>Dark</div>
-        <div>
-          <img src="./assets/icon-moon.svg" alt="theme">
-        </div>
-      </div>
-    </div>
-    
-    <div class="flex bg-white gap-2 py-2 px-2 rounded-lg shadow-xl items-center sm:gap-4">
-      <div class="ml-2 flex-shrink-0 sm:ml-4">
-        <img src="./assets/icon-search.svg" alt="search-icon">
-      </div>
-      <input class="search-input flex-grow outline-none min-w-0 truncate self-stretch" type="text" placeholder="Search GitHub username...">
-      <button class="bg-blue-600 py-4 px-4 text-white font-bold rounded-lg hover:bg-blue-400 sm:px-8">Search</button>
-    </div>
-    
-    <div class="flex px-6 py-12  rounded-lg shadow-xl bg-white flex-wrap sm:px-12 gap-8 sm:gap-0">
-      <div class="flex gap-6 flex-grow w-full sm:gap-8">
-        <div class="rounded-full w-24 h-24 overflow-hidden flex-shrink-0">
-          <img class="h-full" src="{%AVATAR%}" alt="avatar">
-        </div>
-        
-        <div class="flex flex-col justify-between flex-grow sm:flex-row gap-4">
-          <div class="flex flex-col sm:gap-2">
-            <div class="user-name text-2xl font-bold text-black">{%USER_NAME%}</div>
-            <div class="text-blue-600">@{%LOGIN_NAME%}</div>
-          </div>
-          <div>Joined {%CREATE_DATE%}</div>
-        </div>
-      </div>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="/app.css" />
+    <link href="/tailwind.css" rel="stylesheet" />
 
-      <div class="flex gap-8 flex-grow w-full">
-        <div class="hidden sm:block sm:w-24 sm:h-24 flex-shrink-0"></div>
-        <div class="flex justify-between flex-grow flex-col gap-12">
-          <div class="empty">{%BIO%}</div>
-          <div class="flex px-4 py-8 bg-blue-50 rounded-lg gap-4 sm:py-4 sm:px-8 sm:gap-0">
-            <div class="flex flex-1 flex-col items-center sm:items-stretch">
-              <div>Repos</div>
-              <div class="font-bold text-black">{%REPOS%}</div>
-            </div>
-            <div class="flex flex-1 flex-col items-center sm:items-stretch">
-              <div>Followers</div>
-              <div class="font-bold text-black">{%FOLLOWERS%}</div>
-            </div>
-            <div class="flex flex-1 flex-col items-center sm:items-stretch">
-              <div>Following</div>
-              <div class="font-bold text-black">{%FOLLOWING%}</div>
-            </div>
-          </div>
-          <div class="flex flex-col gap-6 sm:gap-4">
-            <div class="flex flex-grow gap-6 flex-col sm:flex-row">
-              <div class="flex gap-2 flex-1">
-                <div class="flex-shrink-0">
-                  <img src="./assets/icon-location.svg" alt="location">
-                </div>
-                <div>{%LOCATION%}</div>
-              </div>
-              <div class="flex gap-2 flex-1 sm:ml-6">
-                <div class="opacity-50 flex-shrink-0">
-                  <img src="./assets/icon-twitter.svg" alt="twitter">
-                </div>
-                <div class="text-gray-300">{%SOCIAL_MEDIA%}</div>
-              </div>
-            </div>
-            <div class="flex flex-grow gap-6 flex-col sm:flex-row">
-              <div class="flex gap-2 flex-1">
-                <div class="flex-shrink-0">
-                  <img src="./assets/icon-website.svg" alt="github">
-                </div>
-                <a class="hover:underline" target="_blank" href="{%GITHUB_LINK%}">{%GITHUB_LINK%}</a>
-              </div>
-              <div class="flex gap-2 flex-1 sm:ml-6">
-                <div class="flex-shrink-0">
-                  <img src="./assets/icon-company.svg" alt="company">
-                </div>
-                <div>{%COMPANY%}</div>
-              </div>
-            </div>
+    <title>Tuan Ngo | GitHub user search app</title>
+  </head>
+  <body class="font-mono text-gray-400 bg-blue-50">
+    <div
+      id="user-search-app"
+      class="flex flex-col my-8 mx-4 w-100% max-w-2xl gap-8 sm:mx-auto sm:my-24"
+    >
+      <div class="flex justify-between items-center">
+        <div class="font-bold text-black text-2xl">devfinder</div>
+        <div class="flex gap-2 text-sm">
+          <div>Dark</div>
+          <div>
+            <img src="./assets/icon-moon.svg" alt="theme" />
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <script src="dist/bundle.js"></script>
-</body>
+      <div
+        class="
+          flex
+          bg-white
+          gap-2
+          py-2
+          px-2
+          rounded-lg
+          shadow-xl
+          items-center
+          sm:gap-4
+        "
+      >
+        <div class="ml-2 flex-shrink-0 sm:ml-4">
+          <img src="./assets/icon-search.svg" alt="search-icon" />
+        </div>
+        <div class="flex flex-grow relative min-w-0 self-stretch">
+          <input
+            class="search-input flex-grow outline-none truncate"
+            type="text"
+            placeholder="Search GitHub username..."
+          />
+          <div
+            class="
+              no-results
+              absolute
+              right-0
+              top-1/2
+              transform
+              -translate-y-1/2
+              text-red-400
+              font-bold
+            "
+          >
+            No Results
+          </div>
+        </div>
+        <button
+          class="
+            search-btn
+            bg-blue-600
+            py-4
+            px-4
+            text-white
+            font-bold
+            rounded-lg
+            hover:bg-blue-400
+            sm:px-8
+          "
+        >
+          Search
+        </button>
+      </div>
+
+      <div
+        class="
+          flex
+          px-6
+          py-12
+          rounded-lg
+          shadow-xl
+          bg-white
+          flex-wrap
+          sm:px-12
+          gap-8
+          sm:gap-0
+        "
+      >
+        <div class="flex gap-6 flex-grow w-full sm:gap-8">
+          <div class="rounded-full w-24 h-24 overflow-hidden flex-shrink-0">
+            <img class="avatar h-full" alt="avatar" />
+          </div>
+
+          <div
+            class="
+              flex flex-col
+              justify-between
+              flex-grow
+              gap-4
+              items-baseline
+              sm:flex-row
+            "
+          >
+            <div class="flex flex-col sm:gap-2">
+              <div class="user-name text-2xl font-bold text-black"></div>
+              <div class="login-name text-blue-600"></div>
+            </div>
+            <div class="join-date"></div>
+          </div>
+        </div>
+
+        <div class="flex gap-8 flex-grow w-full">
+          <div class="hidden sm:block sm:w-24 sm:h-24 flex-shrink-0"></div>
+          <div class="flex justify-between flex-grow flex-col gap-12">
+            <div class="bio empty"></div>
+            <div
+              class="
+                flex
+                px-4
+                py-8
+                bg-blue-50
+                rounded-lg
+                gap-4
+                sm:py-4 sm:px-8 sm:gap-0
+              "
+            >
+              <div class="flex flex-1 flex-col items-center sm:items-stretch">
+                <div>Repos</div>
+                <div class="repos font-bold text-black"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center sm:items-stretch">
+                <div>Followers</div>
+                <div class="followers font-bold text-black"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center sm:items-stretch">
+                <div>Following</div>
+                <div class="following font-bold text-black"></div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-6 sm:gap-4">
+              <div class="flex flex-grow gap-6 flex-col sm:flex-row">
+                <div class="flex gap-2 flex-1">
+                  <div class="flex-shrink-0 h-6 w-6 flex justify-center">
+                    <img src="./assets/icon-location.svg" alt="location" />
+                  </div>
+                  <div class="location"></div>
+                </div>
+                <div class="flex gap-2 flex-1">
+                  <div class="flex-shrink-0 h-6 w-6 flex justify-center">
+                    <img src="./assets/icon-twitter.svg" alt="twitter" />
+                  </div>
+                  <div class="twitter"></div>
+                </div>
+              </div>
+              <div class="flex flex-grow gap-6 flex-col sm:flex-row">
+                <div class="flex gap-2 flex-1 overflow-hidden">
+                  <div class="flex-shrink-0 h-6 w-6 flex justify-center">
+                    <img src="./assets/icon-website.svg" alt="github" />
+                  </div>
+                  <a
+                    class="github-link hover:underline truncate"
+                    target="_blank"
+                  ></a>
+                </div>
+                <div class="flex gap-2 flex-1">
+                  <div class="flex-shrink-0 h-6 w-6 flex justify-center">
+                    <img src="./assets/icon-company.svg" alt="company" />
+                  </div>
+                  <div class="company"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="dist/bundle.js" defer></script>
+  </body>
 </html>

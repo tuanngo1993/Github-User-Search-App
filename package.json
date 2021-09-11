@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
+    "format": "npx prettier --write .",
     "build": "mkdirp ./dist && browserify ./scripts/app.js > ./dist/bundle.js",
     "watch": "watchify ./scripts/app.js -o ./dist/bundle.js -d -v",
     "start": "npm run clean && npm run build && live-server & npm run watch"
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "mkdirp": "^1.0.4",
+    "prettier": "2.4.0",
     "rimraf": "^3.0.2",
     "watchify": "^4.0.0"
   }
