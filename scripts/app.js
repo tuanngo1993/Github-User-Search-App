@@ -55,7 +55,7 @@ function handleRenderUser(userData) {
   userName.textContent = userData.name;
   loginName.textContent = `@${userData.login}`;
   joinDate.textContent = createDate;
-  bio.textContent = userData.bio;
+  bio.textContent = userData.bio || "This profile has no bio";
   repos.textContent = userData.public_repos;
   followers.textContent = userData.followers;
   following.textContent = userData.following;
@@ -65,13 +65,13 @@ function handleRenderUser(userData) {
   handleCheckAvailable(company, userData.company);
 }
 
-function handleChange(e) {
+function handleChangeUser(e) {
   if (e.target.value === "") return;
 
   handleGetUser(e.target.value).then((user) => handleRenderUser(user));
 }
 
-async function handleGetUser(user = "octocat") {
+async function handleGetUser(user = "tuanngo1993") {
   try {
     const response = await axios.get(`https://api.github.com/users/${user}`);
     handleResults();
@@ -81,9 +81,54 @@ async function handleGetUser(user = "octocat") {
   }
 }
 
+function handleLightButton() {
+  const items = document.querySelector('.theme-btn').querySelectorAll('div');
+  
+  document.documentElement.classList.remove("dark");
+  items[0].textContent = "Dark";
+  items[1].querySelector('img').src = "./assets/icon-moon.svg";
+}
+
+function handleDarkButton() {
+  const items = document.querySelector('.theme-btn').querySelectorAll('div');
+
+  document.documentElement.classList.add("dark");
+  items[0].textContent = "Light";
+  items[1].querySelector('img').src = "./assets/icon-sun.svg";
+}
+  
+function handleTheme() {
+  if(this.window) {
+    if(localStorage.theme === "dark" ) {
+      handleDarkButton();
+    } else {
+      handleLightButton();
+    }
+  } else {
+      if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        localStorage.theme = "light";
+        handleLightButton();
+      } else {
+        localStorage.theme = "dark";
+        handleDarkButton();
+      }
+  }
+}
+
+// Start run app from here
+document.addEventListener('DOMContentLoaded', () => {
+  handleTheme();
+})
+
 handleGetUser().then((user) => handleRenderUser(user));
 
 let searchInput = document.querySelector(".search-input");
 let searchBtn = document.querySelector(".search-btn");
-searchInput.addEventListener("change", handleChange);
+let themeBtn = document.querySelector(".theme-btn");
+searchInput.addEventListener("change", handleChangeUser);
 searchBtn.addEventListener("click", searchInput.onchange);
+themeBtn.addEventListener("click", handleTheme);
