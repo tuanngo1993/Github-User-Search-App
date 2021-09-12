@@ -54,7 +54,7 @@ function handleRenderUser(userData) {
   avatar.src = userData.avatar_url;
   userName.textContent = userData.name;
   loginName.textContent = `@${userData.login}`;
-  joinDate.textContent = createDate;
+  joinDate.textContent = 'Joined ' + createDate;
   bio.textContent = userData.bio || "This profile has no bio";
   repos.textContent = userData.public_repos;
   followers.textContent = userData.followers;
