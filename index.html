@@ -10,23 +10,24 @@
       sizes="32x32"
       href="./assets/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="/app.css" />
+    <link rel="stylesheet" href="./app.css" />
     <link href="dist/tailwind.css" rel="stylesheet" />
 
     <title>Tuan Ngo | GitHub user search app</title>
   </head>
   <body class="font-mono text-gray-400 bg-blue-50 dark:bg-gray-800 dark:text-white">
     <div
+      role="main"
       id="user-search-app"
       class="flex flex-col my-8 mx-4 w-11/12 max-w-2xl gap-8 sm:mx-auto sm:my-24"
     >
       <div class="flex justify-between items-center">
         <div class="font-bold text-black text-2xl dark:text-white">devfinder</div>
         <button class="theme-btn flex gap-2 text-sm">
-          <div>Dark</div>
-          <div>
+          <span>Dark</span>
+          <span>
             <img src="./assets/icon-moon.svg" alt="theme" />
-          </div>
+          </span>
         </button>
       </div>
 
@@ -49,11 +50,13 @@
           <img src="./assets/icon-search.svg" alt="search-icon" />
         </div>
         <div class="flex flex-grow relative min-w-0 self-stretch">
-          <input
-            class="search-input flex-grow outline-none truncate bg-transparent"
-            type="text"
-            placeholder="Search GitHub username..."
-          />
+          <label>
+            <input
+              class="search-input flex-grow outline-none truncate bg-transparent"
+              type="text"
+              placeholder="Search GitHub username..."
+            />
+          </label>
           <div
             class="
               no-results
@@ -104,7 +107,7 @@
       >
         <div class="flex gap-6 flex-grow w-full sm:gap-8">
           <div class="rounded-full w-24 h-24 overflow-hidden flex-shrink-0">
-            <img class="avatar h-full" alt="avatar" />
+            <img class="avatar h-full" src="" alt="avatar" />
           </div>
 
           <div

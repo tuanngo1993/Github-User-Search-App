@@ -82,7 +82,7 @@ async function handleGetUser(user = "tuanngo1993") {
 }
 
 function handleLightButton() {
-  const items = document.querySelector('.theme-btn').querySelectorAll('div');
+  const items = document.querySelector('.theme-btn').querySelectorAll('span');
   
   document.documentElement.classList.remove("dark");
   items[0].textContent = "Dark";
@@ -90,7 +90,7 @@ function handleLightButton() {
 }
 
 function handleDarkButton() {
-  const items = document.querySelector('.theme-btn').querySelectorAll('div');
+  const items = document.querySelector('.theme-btn').querySelectorAll('span');
 
   document.documentElement.classList.add("dark");
   items[0].textContent = "Light";
