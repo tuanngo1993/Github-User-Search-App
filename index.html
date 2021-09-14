@@ -15,18 +15,28 @@
 
     <title>Tuan Ngo | GitHub user search app</title>
   </head>
-  <body class="font-mono text-gray-400 bg-blue-50 dark:bg-gray-800 dark:text-white">
+  <body
+    class="font-mono text-gray-400 bg-blue-50 dark:bg-gray-800 dark:text-white"
+  >
     <div
       role="main"
       id="user-search-app"
-      class="flex flex-col my-8 mx-4 w-11/12 max-w-2xl gap-8 sm:mx-auto sm:my-24"
+      class="
+        flex flex-col
+        my-8
+        mx-4
+        w-11/12
+        max-w-2xl
+        gap-8
+        sm:mx-auto sm:my-24
+      "
     >
       <div class="flex justify-between items-center">
         <h1 class="font-bold text-black text-2xl dark:text-white">devfinder</h1>
         <button class="theme-btn flex gap-2 text-sm">
           <span>Dark</span>
           <span>
-            <img src="./assets/icon-moon.svg" alt="theme" />
+            <img src="./src/images/icon-moon.svg" alt="theme" />
           </span>
         </button>
       </div>
@@ -41,18 +51,23 @@
           rounded-lg
           shadow-xl
           items-center
-          dark:bg-indigo-900
-          dark:bg-opacity-50
+          dark:bg-indigo-900 dark:bg-opacity-50
           sm:gap-4
         "
       >
         <div class="ml-2 flex-shrink-0 sm:ml-4">
-          <img src="./assets/icon-search.svg" alt="search-icon" />
+          <img src="./src/images/icon-search.svg" alt="search-icon" />
         </div>
         <div class="flex flex-grow relative min-w-0 self-stretch">
           <label class="flex flex-grow">
             <input
-              class="search-input flex-grow outline-none truncate bg-transparent"
+              class="
+                search-input
+                flex-grow
+                outline-none
+                truncate
+                bg-transparent
+              "
               type="text"
               placeholder="Search GitHub username..."
             />
@@ -100,8 +115,7 @@
           flex-wrap
           sm:px-12
           gap-8
-          dark:bg-indigo-900
-          dark:bg-opacity-50
+          dark:bg-indigo-900 dark:bg-opacity-50
           sm:gap-0
         "
       >
@@ -121,7 +135,9 @@
             "
           >
             <div class="flex flex-col sm:gap-2">
-              <div class="user-name text-2xl font-bold text-black dark:text-white"></div>
+              <div
+                class="user-name text-2xl font-bold text-black dark:text-white"
+              ></div>
               <div class="login-name text-blue-600 dark:text-blue-300"></div>
             </div>
             <div class="join-date"></div>
@@ -130,7 +146,15 @@
 
         <div class="flex gap-8 flex-grow w-full">
           <div class="hidden sm:block sm:w-24 sm:h-24 flex-shrink-0"></div>
-          <div class="flex justify-between flex-grow flex-col gap-12 overflow-hidden">
+          <div
+            class="
+              flex
+              justify-between
+              flex-grow flex-col
+              gap-12
+              overflow-hidden
+            "
+          >
             <div class="bio empty"></div>
             <div
               class="
@@ -150,24 +174,36 @@
               </div>
               <div class="flex flex-1 flex-col items-center sm:items-stretch">
                 <div class="dark:text-white">Followers</div>
-                <div class="followers font-bold text-black dark:text-white"></div>
+                <div
+                  class="followers font-bold text-black dark:text-white"
+                ></div>
               </div>
               <div class="flex flex-1 flex-col items-center sm:items-stretch">
                 <div class="dark:text-white">Following</div>
-                <div class="following font-bold text-black dark:text-white"></div>
+                <div
+                  class="following font-bold text-black dark:text-white"
+                ></div>
               </div>
             </div>
             <div class="flex flex-col gap-6 sm:gap-4">
               <div class="flex flex-grow gap-6 flex-col sm:flex-row">
                 <div class="flex gap-2 flex-1">
                   <div class="flex-shrink-0 h-6 w-6 flex justify-center">
-                    <img class="dark:filter dark:brightness-0 dark:invert" src="./assets/icon-location.svg" alt="location" />
+                    <img
+                      class="dark:filter dark:brightness-0 dark:invert"
+                      src="./src/images/icon-location.svg"
+                      alt="location"
+                    />
                   </div>
                   <div class="location"></div>
                 </div>
                 <div class="flex gap-2 flex-1">
                   <div class="flex-shrink-0 h-6 w-6 flex justify-center">
-                    <img class="dark:filter dark:brightness-0 dark:invert" src="./assets/icon-twitter.svg" alt="twitter" />
+                    <img
+                      class="dark:filter dark:brightness-0 dark:invert"
+                      src="./src/images/icon-twitter.svg"
+                      alt="twitter"
+                    />
                   </div>
                   <div class="twitter"></div>
                 </div>
@@ -175,7 +211,11 @@
               <div class="flex flex-grow gap-6 flex-col sm:flex-row">
                 <div class="flex gap-2 flex-1 overflow-hidden">
                   <div class="flex-shrink-0 h-6 w-6 flex justify-center">
-                    <img class="dark:filter dark:brightness-0 dark:invert" src="./assets/icon-website.svg" alt="github" />
+                    <img
+                      class="dark:filter dark:brightness-0 dark:invert"
+                      src="./src/images/icon-website.svg"
+                      alt="github"
+                    />
                   </div>
                   <a
                     class="github-link hover:underline truncate"
@@ -184,7 +224,11 @@
                 </div>
                 <div class="flex gap-2 flex-1">
                   <div class="flex-shrink-0 h-6 w-6 flex justify-center">
-                    <img class="dark:filter dark:brightness-0 dark:invert" src="./assets/icon-company.svg" alt="company" />
+                    <img
+                      class="dark:filter dark:brightness-0 dark:invert"
+                      src="./src/images/icon-company.svg"
+                      alt="company"
+                    />
                   </div>
                   <div class="company"></div>
                 </div>
